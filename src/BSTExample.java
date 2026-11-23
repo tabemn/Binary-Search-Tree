@@ -7,12 +7,14 @@ import java.util.Scanner;
  * A user may type "null" to skip a value. The program displays a menu
  * for inorder, preorder, and postorder traversal until Exit is selected.
  */
+
 class Node {
     char data;
     Node left;
     Node right;
 
     /** Creates a node containing a character. */
+
     Node(char data) {
         this.data = data;
         this.left = null;
@@ -27,6 +29,7 @@ public class BSTExample {
      * Smaller values go left and larger values go right.
      * Duplicate characters are not inserted, as in the provided example.
      */
+
     static Node insert(Node root, char value) {
         if (root == null) {
             return new Node(value);
@@ -41,6 +44,7 @@ public class BSTExample {
     }
 
     /** Displays nodes in left -> root -> right order. */
+
     static void inorder(Node root) {
         if (root == null) return;
         inorder(root.left);
@@ -49,6 +53,7 @@ public class BSTExample {
     }
 
     /** Displays nodes in root -> left -> right order. */
+
     static void preorder(Node root) {
         if (root == null) return;
         System.out.print(root.data + " ");
@@ -57,6 +62,7 @@ public class BSTExample {
     }
 
     /** Displays nodes in left -> right -> root order. */
+
     static void postorder(Node root) {
         if (root == null) return;
         postorder(root.left);
@@ -65,6 +71,7 @@ public class BSTExample {
     }
 
     /** Reads a nonnegative integer, asking again if the entry is invalid. */
+
     static int readCount(Scanner scanner) {
         while (true) {
             System.out.print("How many character values will you enter? ");
@@ -85,6 +92,7 @@ public class BSTExample {
      * Reads one character or the text "null".
      * Returns null when the user wants to skip this array position.
      */
+
     static Character readCharacter(Scanner scanner, int position) {
         while (true) {
             System.out.print("Enter character " + position + " (or null to skip): ");
@@ -100,6 +108,7 @@ public class BSTExample {
     }
 
     /** Displays choices until the user selects option 4. */
+
     static void runMenu(Scanner scanner, Node root) {
         while (true) {
             System.out.println("\n1. Inorder traversal");
@@ -135,6 +144,7 @@ public class BSTExample {
     }
 
     /** Collects values, builds the BST using insert, and opens the menu. */
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int count = readCount(scanner);
